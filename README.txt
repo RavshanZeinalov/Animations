@@ -1,0 +1,1 @@
+Don't forget to rename folder "nameAnimation" to "app"
