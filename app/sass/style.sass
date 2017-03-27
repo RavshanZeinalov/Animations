@@ -1,0 +1,158 @@
+
+// Structure
+nav
+  padding: 50px
+  text-align: center
+  ul
+    list-style: none
+    padding: 0
+    margin: 0
+    display: inline-block
+    background: #ddd
+    border-radius: 5px
+    li
+      float: left
+      width: 150px
+      height: 65px
+      line-height: 65px
+      position: relative
+      text-transform: uppercase
+      font-size: 14px
+      color: rgba(0, 0, 0, .7)
+      cursor: pointer
+      &:hover
+        background: #d5d5d5
+        border-radius: 5px
+
+
+// DROP-MENU
+.drop-menu
+  position: absolute
+  top: 100%
+  left: 0
+  width: 100%
+  padding: 0
+  background: none
+  li
+    background: #666
+    color: rgba(255, 255, 255, .7)
+    // HIDE DROP-MENU
+    display: none
+    &:hover
+      background: #606060
+      border-radius: 0
+    &:last-child
+      border-radius: 0 0 5px 5px
+
+//MENU ITEMS: style 1, style 2, style 3, style 4
+li
+  &:hover
+    // SHOW DROP-MENU AFTER HOVER
+    .drop-menu
+      li
+        display: block
+    // ANIMATION DROP-MENU 1
+    .menu-1
+      perspective: 1000px
+      li
+        opacity: 0
+
+        @for $i from 1 through 6
+          &:nth-child(#{$i})
+            animation:
+              name: dropMenu1
+              duration: 300ms
+              delay: (150ms * $i) - 300
+              timing-function: ease-in-out
+              fill-mode: forwards
+    // ANIMATION DROP-MENU 2
+    .menu-2
+      perspective: 1000px
+      li
+        opacity: 0
+        transform-origin: top center
+
+        @for $i from 1 through 6
+          &:nth-child(#{$i})
+            animation:
+              name: dropMenu2
+              duration: 300ms
+              delay: (150ms * $i) - 300
+              timing-function: ease-in-out
+              fill-mode: forwards
+    // ANIMATION DROP-MENU 3
+    .menu-3
+      perspective: 1000px
+      li
+        opacity: 0
+
+        @for $i from 1 through 6
+          &:nth-child(#{$i})
+            animation:
+              name: dropMenu3
+              duration: 300ms
+              delay: (150ms * $i) - 300
+              timing-function: ease-in-out
+              fill-mode: forwards
+    // ANIMATION DROP-MENU 4
+    .menu-4
+      perspective: 1000px
+      li
+        opacity: 0
+        transform-origin: top right
+
+        @for $i from 1 through 6
+          &:nth-child(#{$i})
+            animation:
+              name: dropMenu4
+              duration: 300ms
+              delay: (150ms * $i) - 300
+              timing-function: ease-in-out
+              fill-mode: forwards
+
+
+
+
+
+// ANIMATION keyframes DROP-MENU 1
+@keyframes dropMenu1
+  0%
+    opacity: 0
+    transform: rotateY(-90deg) translateY(30px)
+  100%
+    opacity: 1
+    transform: rotateY(0deg) translateY(0)
+
+
+// ANIMATION keyframes DROP-MENU 2
+@keyframes dropMenu2
+  0%
+    opacity: 0
+    transform: rotateX(-90deg)
+  60%
+    transform: rotateX(40deg)
+  100%
+    opacity: 1
+    transform: rotateX(0deg)
+
+
+// ANIMATION keyframes DROP-MENU 3
+@keyframes dropMenu3
+  0%
+    opacity: 0
+    transform: scale(.3) translateY(-60px)
+  80%
+    transform: scale(1.2) translateY(10px)
+  100%
+    opacity: 1
+    transform: scale(1) translateY(0)
+
+
+// ANIMATION keyframes DROP-MENU 4
+@keyframes dropMenu4
+  0%
+    opacity: 0
+    transform: rotate(-30deg) translateX(30px)
+  100%
+    opacity: 1
+    transform: rotate(0deg) translateX(0)

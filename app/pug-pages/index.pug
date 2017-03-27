@@ -1,0 +1,18 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    title Drop Down
+    link(rel="stylesheet", href="css/style.css")
+  body
+    nav: ul
+      - var i = 0;
+        while (i++ < 4)
+          li style #{i}
+            ul(class="drop-menu menu-" + i)
+              li uno
+              li dos
+              li tres
+              li cuatro
+              li cinco
+              li seis
